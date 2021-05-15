@@ -1,0 +1,19 @@
+<% if @post.errors.any? %>
+ <div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+   <div class="card border-danger mb-3">
+    <div class="card-header">
+        <%= pluralize(@post.errors.count, "error") %>
+        prohibited this article from being saved:
+    </div>
+    <div class="card-body">
+    
+       <% @post.errors.full_messages.each do |msg|%>
+        <li class="card-title"><%= msg %></li>
+       <% end %>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+<% end %>

@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
-    http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
-    
+    before_action :authenticate_user!, only: %i[new edit create update destroy]
+    #before_action :set_post, only: %i[show edit update destroy]
+   
+
     def index
-        @posts = Post.all
+        @posts = Post.ordered.with_authors
     end
 
     def show 
@@ -15,10 +17,13 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
+        @post.author = current_user
         
         if @post.save
+            flash[:success]="Post was successfully created"
             redirect_to @post
         else
+            flash[:success]="Failed to create a new post"
             render :new
         end
     end
@@ -31,8 +36,10 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id]) 
 
         if @post.update(post_params)
+            flash[:success]="Post was successfully updated"
             redirect_to @post
         else
+            flash[:success]="Post was not updated"
             render :edit
         end
     end
@@ -40,7 +47,7 @@ class PostsController < ApplicationController
     def destroy
         @post=Post.find(params[:id])
         @post.destroy
-
+        flash[:success]="Post was deleted"
         redirect_to root_path
     end
 
