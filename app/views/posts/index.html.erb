@@ -1,5 +1,8 @@
 <h1 align="center">All gay posts</h1>
 <h2 aligh="center">Our blog has <%= Post.public_count %> gay fantasies </h2>
+<div align="center">
+ <%= will_paginate @clients, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>
 <div class="all-posts">
     <% @posts.each do |post| %>
                 <div class="card view-post" style="margin:1%">

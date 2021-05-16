@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
     def index
         authorize Post
-        @posts = Post.published("public", current_user).ordered.with_authors
+        @posts = Post.published("public", current_user).ordered.with_authors.all.paginate(page: params[:page], per_page: 5)
     end
 
     def show 
