@@ -6,6 +6,9 @@ class PostsController < ApplicationController
     def index
         authorize Post
         @posts = Post.published("public", current_user).ordered.with_authors.all.paginate(page: params[:page], per_page: 5)
+        
+        @posts = @posts.search(params[:query])
+
     end
 
     def show 

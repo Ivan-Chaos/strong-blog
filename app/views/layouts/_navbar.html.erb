@@ -37,10 +37,18 @@
           <% end %>
         </li>
       </ul>
+      <!--
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form> -->
+
+      <%= form_with class:"d-flex", method: :get do |form| %>
+        <%= form.label :query, "Search for:" %>
+        <%= form.text_field :query, value: params[:query], class: "form-control me-2", placeholder: "Search", type: "search" %>
+        <%= form.submit "Search", class:"btn btn-outline-success", type:"submit" %>
+      <% end %>
+    
     </div>
   </div>
 </nav>

@@ -6,4 +6,6 @@
 
 * authorization(users havel limited access to others' posts) 2pts
 
-* pagination
+* pagination 2pts
+
+* search (by post's title)
