@@ -4,14 +4,18 @@ class PostsController < ApplicationController
    
 
     def index
-        @posts = Post.ordered.with_authors
+        authorize Post
+        @posts = Post.published("public", current_user).ordered.with_authors
     end
 
     def show 
+        
         @post = Post.find(params[:id])
+        authorize @post
     end
 
     def new
+        authorize Post
         @post = Post.new()
     end
 
@@ -30,6 +34,7 @@ class PostsController < ApplicationController
     
     def edit
         @post = Post.find(params[:id]) 
+        authorize @post
     end
 
     def update
@@ -46,6 +51,7 @@ class PostsController < ApplicationController
     
     def destroy
         @post=Post.find(params[:id])
+        authorize @post
         @post.destroy
         flash[:success]="Post was deleted"
         redirect_to root_path

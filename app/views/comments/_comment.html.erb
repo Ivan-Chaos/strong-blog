@@ -8,8 +8,10 @@
 </p>
 
 <p>
-  <%= link_to 'Destroy Comment', [comment.post, comment],
-              method: :delete,
-              data: { confirm: "Are you sure you wanna delete you precious opinion?" } %>
+  <% if policy(@post).destroy? %>
+    <%= link_to 'Destroy Comment', [comment.post, comment],
+                method: :delete,
+                data: { confirm: "Are you sure you wanna delete you precious opinion?" } %>
+  <% end %>
 </p>
 <hr>

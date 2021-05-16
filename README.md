@@ -1,24 +1,7 @@
-# README
+#INCLUDED FEATURES
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*getting started(adding/editing/deleting posts, commenting, hiding posts) 5pts
 
-Things you may want to cover:
+*authentification(users have their own posts, so do comments) 2pts
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*authorization(users havel limited access to others' posts) 2pts
