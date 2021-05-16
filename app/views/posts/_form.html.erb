@@ -23,6 +23,10 @@
    <div class="col-sm-offset-2 col-sm-10">
     <%= f.submit class: 'btn btn-primary btn-large' %>
    </div>
+    <div class="form-group">
+      <%= f.label :status %><br>
+      <%= f.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+    </div>
   </div>
 <% end %>
  </div>
