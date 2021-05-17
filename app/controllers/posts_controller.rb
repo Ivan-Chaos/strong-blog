@@ -11,6 +11,14 @@ class PostsController < ApplicationController
 
     end
 
+    def non_published
+        authorize Post
+
+        @posts = current_user.dungeonMaster? ? Post.all : current_user.posts
+        @posts= @posts.non_published.ordered.with_authors.all.paginate(page: params[:page], per_page: 5)
+
+    end
+
     def show 
         
         @post = Post.find(params[:id])

@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
 
   scope :published, ->(value = "public", user){where("status=? OR author_id=?", value, user)}
+  scope :non_published, ->(){where("status=?", "private")}
   
   scope :mine, ->(value){where("author": value)}
   scope :ordered, ->(direction= :desc){ order(created_at: direction)}

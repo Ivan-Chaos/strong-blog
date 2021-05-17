@@ -4,8 +4,8 @@
 
 * authentification(users have their own posts, so do comments) 2pts
 
-* authorization(users havel limited access to others' posts) 2pts
+* authorization(admin feature included ) 4pts
 
 * pagination 2pts
 
-* search (by post's title)
+* search (by post's title) 2 pts 

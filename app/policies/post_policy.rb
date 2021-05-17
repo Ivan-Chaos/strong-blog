@@ -4,7 +4,7 @@ class PostPolicy<ApplicationPolicy
     end
 
     def show?
-        author? || record.public?
+        author? || record.public? || dungeonMaster?
     end
 
     def create?
@@ -12,18 +12,20 @@ class PostPolicy<ApplicationPolicy
     end
 
     def update?
-        author?
+        author? || dungeonMaster?
     end
 
     def destroy?
-        author?
+        author? || dungeonMaster?
     end
 
-    
+    def non_published?
+        user_logged_in?
+    end
 
-    private 
+    private     
     def author?
-        return false unless user
-        record.author_id==user.id
+        user_logged_in? && record.author_id == user.id
     end
+ 
 end

@@ -8,9 +8,15 @@ Rails.application.routes.draw do
 
 
   resources :posts do
+    collection do
+      get '/non_published', to: 'posts#non_published'
+    end
+    
     resources :comments
   end
-  root to: redirect('/posts')
 
+  #get '/posts/non_published', to: 'posts#non_published'
+
+  root to: redirect('/posts')
 
 end

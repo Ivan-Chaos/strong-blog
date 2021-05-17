@@ -46,4 +46,15 @@ class ApplicationPolicy
       scope.all
     end
   end
+
+  private 
+
+  def user_logged_in?
+    !!user
+  end 
+
+  def dungeonMaster?
+    user_logged_in? && user.dungeonMaster?
+  end
+
 end
