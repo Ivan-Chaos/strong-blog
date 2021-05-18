@@ -1,5 +1,13 @@
 <div class="card" style="margin-top: 5%">
-  <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+  
+  <% if @post.file.attached? %>
+    <%= image_tag @post.file %>
+  <% else %>
+   <h1>no</h1>
+  <% end %>
+
+
+
   <div class="card-header">
     <h5 class="card-title"><%= @post.title %></h5>
     <p> <%= @post.created_at %></p>

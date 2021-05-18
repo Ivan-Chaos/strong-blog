@@ -4,7 +4,11 @@ class Post < ApplicationRecord
   belongs_to :author, class_name: 'User'
 
   has_many :comments, dependent: :destroy
+  has_one_attached :file
+
   validates :title, presence: true
+  #validates :file, presence: true, blob: { content_type: ['image/jpg', 'image/jpeg', 'image/png'], size_range: 0..3.megabytes }
+
 
   scope :published, ->(value = "public", user){where("status=? OR author_id=?", value, user)}
   scope :non_published, ->(){where("status=?", "private")}

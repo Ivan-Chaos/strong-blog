@@ -4,4 +4,10 @@
  <%= will_paginate @clients, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 </div>
 
-<%= render 'posts', posts: @posts %>
+<div class="card-columns all-posts">
+    <%= render 'posts', posts: @posts %>
+</div>
+
+<div align="center">
+    <%= will_paginate @clients, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div

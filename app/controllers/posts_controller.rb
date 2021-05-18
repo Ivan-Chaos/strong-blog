@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
     def index
         authorize Post
-        @posts = Post.published("public", current_user).ordered.with_authors.all.paginate(page: params[:page], per_page: 5)
+        @posts = Post.published("public", current_user).ordered.with_authors.all.paginate(page: params[:page], per_page: 20)
         
         @posts = @posts.search(params[:query])
 
@@ -33,6 +33,7 @@ class PostsController < ApplicationController
     def create
         @post = Post.new(post_params)
         @post.author = current_user
+        
         
         if @post.save
             flash[:success]="Post was successfully created"
@@ -71,6 +72,6 @@ class PostsController < ApplicationController
     private 
 
     def post_params
-        params.require(:post).permit(:title, :body, :status)
+        params.require(:post).permit(:title, :body, :status, :file)
     end
 end

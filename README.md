@@ -9,3 +9,5 @@
 * pagination 2pts
 
 * search (by post's title) 2 pts 
+
+*

@@ -1,7 +1,12 @@
 $navbar-default-bg: black;
 
+body{
+    background-color: rgb(22, 22, 18) !important;
+}
 
-
+h1, h2{
+    color: white !important;
+}
 
 #logo {
  float: left;
@@ -21,11 +26,13 @@ $navbar-default-bg: black;
 }
 
 .view-post{
-    max-width: 50%;
+    
 }
 
 .all-posts{
     align-items: center;
+    
+    justify-content: center;
 }
 
 .post-title {
