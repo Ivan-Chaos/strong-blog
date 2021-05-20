@@ -8,6 +8,10 @@
 
 * pagination 2pts
 
-* search (by post's title) 2 pts 
+* search (by post's title) 2pts 
 
-*
+* image upload(S3 upload included) 4pts
+
+* Heroku deployment(https://gachiblog.herokuapp.com/) 3pts
+
+TOTAL: 21pts
