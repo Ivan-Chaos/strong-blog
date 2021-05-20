@@ -14,4 +14,4 @@
 
 * Heroku deployment(https://gachiblog.herokuapp.com/) 3pts
 
-TOTAL: 21pts
+TOTAL: 22pts

@@ -6,7 +6,7 @@ body{
     background-color: rgb(22, 22, 18) !important;
 }
 
-h1, h2{
+h1, h2, h4{
     color: white !important;
 }
 
@@ -29,6 +29,56 @@ h1, h2{
 
 .view-post{
     
+}
+
+#nuke-it {
+    transition: all 2s ease;
+    background: rgb(249,255,0);
+    background: linear-gradient(60deg, rgba(249,255,0,1) 0%, rgba(255,98,0,1) 100%);
+    margin-bottom: 10%;
+    margin-right: 10% !important;
+}
+#nuke-it:hover {
+    background: rgb(255,0,0);
+    //background: linear-gradient(60deg, rgba(255,0,0,1) 0%, rgba(255,201,0,1) 100%);
+}
+
+.edit-prep{
+    width: 9.5rem;
+
+}
+
+.edit-label{
+    width:100%;
+    background-color: rgba(0, 0, 0, 0) !important;
+    color: white !important;
+}
+
+.gradientable{
+    background: rgb(249,255,0);
+    background: linear-gradient(60deg, rgba(249,255,0,1) 0%, rgba(255,98,0,1) 100%);
+}
+
+.black-splitter{
+    height:6px !important;
+    border-width:0;
+    border-radius: 5px;
+    color:black;
+    background-color:black;
+    opacity: 100;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.white-splitter{
+    height:2px !important;
+    border-width:0;
+    border-radius: 5px;
+    color:rgb(255, 255, 255);
+    background-color:rgba(255, 255, 255, 0.452);
+    opacity: 100;
+    width: 100%;
+    margin-top: 7% !important;
 }
 
 .all-posts{
