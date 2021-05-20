@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   has_one_attached :file
 
   validates :title, presence: true
-  validates :file, presence: true, blob: { content_type: ['image/jpg', 'image/jpeg', 'image/png'], size_range: 0..3.megabytes }
+  validates :file, blob: { content_type: ['image/jpg', 'image/jpeg', 'image/png'], size_range: 0..3.megabytes }
 
 
   scope :published, ->(value = "public", user){where("status=? OR author_id=?", value, user)}
