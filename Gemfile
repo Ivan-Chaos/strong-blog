@@ -55,3 +55,7 @@ gem "will_paginate"
 gem 'bootstrap-will_paginate'
 
 gem 'will_paginate-bootstrap4'
+
+gem "aws-sdk-s3", require: false
+
+gem 'image_processing'
