@@ -16,7 +16,13 @@ class PostsController < ApplicationController
 
         @posts = current_user.dungeonMaster? ? Post.all : current_user.posts
         @posts= @posts.non_published.ordered.with_authors.all.paginate(page: params[:page], per_page: 5)
+    end
 
+    def remove_image
+        session[:return_to] ||= request.referer
+        @post_file = ActiveStorage::Attachment.find(params[:format])
+        @post_file.purge
+        redirect_to session.delete(:return_to)  
     end
 
     def show 

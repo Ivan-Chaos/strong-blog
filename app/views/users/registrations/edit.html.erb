@@ -1,4 +1,3 @@
-
 <div class="d-flex justify-content-center h-100">
   <div class="card mb-3 sign-in" style="max-width: 1000px; min-width: 50%">
     <div class="row">
@@ -40,6 +39,15 @@
                 <div class="input-group-text edit-label">Confirm password</div>
               </div>
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Not changed"%>
+            </div>
+            
+            <p style="color: white; margin-bottom: 0px; margin-top:1em;">Enter your password to confirm the changes</p>
+            <div class="input-group form-group">
+              
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+              </div>
+              <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder: "Your password" %>
             </div>
 
             <div class="form-group">

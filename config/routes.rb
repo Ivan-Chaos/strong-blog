@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :posts do
     collection do
       get '/non_published', to: 'posts#non_published'
+      delete :remove_image
     end
     
     resources :comments

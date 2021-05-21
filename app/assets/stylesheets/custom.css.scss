@@ -31,13 +31,56 @@ h1, h2, h4{
     
 }
 
+.create-label{
+    font-weight: 600;
+    font-size: 25pt;
+}
+
+.create-btn{
+    font-size: 20pt !important;
+    color: black;
+    background-color: #FFC312 !important;
+    padding: 1em;
+    font-weight: 600 !important;
+}
+
+.status-select{
+    background-color: rgba(255, 255, 255, 0) !important;
+    border: none;
+    color: white;
+}
+
+.status-select option[value="public"]{
+    background-color: rgb(0, 0, 0) !important;
+    border: none;
+    color: white;
+}
+
+.status-select option[value="private"]{
+    background-color: rgb(0, 0, 0) !important;
+    border: none;
+    color: rgba(175, 175, 175, 0.931);
+}
+
+.status-string{
+    margin-bottom: 0px;
+    margin-right: 1em;
+}
+
+label.status-select{
+    margin-right: 0.5em;
+    text-align: center;
+    font-size: 20pt;
+    font-weight: 600;
+}
+
 .new-post-card-body{
     background-color: rgba(0, 0, 0, 0.692) !important;
 }
 
 .new-post-card-body>* {
     color: white !important;
-    font-size: 20pt;
+    font-size: 16pt;
 }
 
 #nuke-it {
@@ -66,6 +109,11 @@ h1, h2, h4{
 .gradientable{
     background: rgb(249,255,0);
     background: linear-gradient(60deg, rgba(249,255,0,1) 0%, rgba(255,98,0,1) 100%);
+}
+
+.gradientable2{
+    background: rgb(189,255,0);
+    background: radial-gradient(circle, rgba(189,255,0,1) 0%, rgba(255,252,0,1) 100%);
 }
 
 .black-splitter{

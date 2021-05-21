@@ -1,9 +1,19 @@
 <%= render 'shared/errors' %>
 
 <div class="card" style="background-color: rgba(0, 0, 0, 0);">
-  <div class="card-header gradientable d-flex justify-content-center">
-    <h1 style="color:black !important;">Create a new post</h1>
+  
+  
+  <div class="card-header gradientable2 d-flex justify-content-center">
+    <h1 style="color:black !important;">Editing current post</h1>
   </div>
+  <% if @post.file.attached? %>
+    <%= image_tag @post.file %>
+    <%= link_to 'Remove image', remove_image_posts_url(@post.file.id),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+  <% end %>
+  
+
   <div class="card-body new-post-card-body">
     <%= form_for(@post, :html => {class: "form-horizontal", role: "form"}) do |f| %>
       <div class="form-group">
@@ -20,17 +30,17 @@
         <label for="formFileLg" class="form-label">Wanna express yourself even further? <b>Upload a photo</b></label>
         <%= f.file_field :file, class: "form-control form-control-lg", id:"validatedCustomFile" %>
       </div>
+
       <div class="form-group d-flex align-items-center justify-content-end">
-        <p class="align-self-center status-string">You're about to make a <span>
+        <p class="align-self-center status-string">This post has a  <span>
         <%= f.select(:status, ['public', 'private'], {}, { :class => 'status-select' }) %></span>
-        post</p>
+        status</p>
         <%= f.submit class: 'btn create-btn'%>
       </div>
       <% end %>
-
+    
   </div>
   <div class="card-footer new-post-card-body">
-    
   </div>
 </div>
 
