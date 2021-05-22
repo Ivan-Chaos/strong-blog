@@ -12,6 +12,6 @@
 
 * image upload(S3 upload included) 4pts
 
-* Heroku deployment(https://gachiblog.herokuapp.com/) 3pts
+* Heroku deployment(https://elton-blog.herokuapp.com/) 3pts
 
 TOTAL: 22pts

@@ -338,3 +338,11 @@ input:focus{
 .card-form{
     margin-top: 2em;
 }
+
+.card-footer.index-card{
+    padding-bottom: 0 !important;
+}
+
+.card-footer.index-card> .mr-auto.p-2> p{
+    margin-bottom: 0 !important;
+}

@@ -1,7 +1,13 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <%= link_to "ELTON blog", root_path, class: "navbar-brand", id: "logo" %>
+    <%= link_to root_path do %>
+      <a class="navbar-brand" href="#">
+        <img src="https://i.ibb.co/16QJ7ty/image-removebg-preview.png" width="auto" height="40pt" alt="">
+        ELTON BLOG
+      </a>
+    <% end %>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -50,73 +56,3 @@
     </div>
   </div>
 </nav>
-
-
-
-<!--
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  
-  <div class="container-fluid">
-    <%= link_to "ELTON blog", root_path, class: "navbar-brand", id: "logo" %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <%= link_to "Create a new post", new_post_path, class: "nav-link", id: "new" %>
-        </li>
-        <% if policy(Post).non_published? %>
-          <li class="nav-item">
-            <%= link_to "My privated posts", non_published_posts_path, class: "nav-link" %>
-          </li>
-        <% end %>
-        
-        <% if user_signed_in? && current_user.dungeonMaster? %>
-          
-        <% end %>
-
-
-        <li class="nav-item">
-          <% if user_signed_in? %>
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
-              <%= current_user.username %> 
-            </a>
-            <% else %>
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
-                <%= link_to 'Sign in', new_user_session_path %>
-              </a>
-            <% end %>
-        </li>
-        <li class="nav-item">
-          <% if user_signed_in? %>  
-            <%= link_to 'Log out', destroy_user_session_path, class: "nav-link", method: :delete, data: { confirm: 'Are u sure' }%>
-          <% end %>
-        </li>
-        
-      </ul>
-   
-      <ul class="navnar-center">
-        <%= form_with class:"d-flex", method: :get do |form| %>
-          <li><%= form.label :query, "Search for:" %></li>
-          <li><%= form.text_field :query, value: params[:query], class: "form-control me-2", placeholder: "Search", type: "search" %></li>
-          <li><%= form.submit "Search", class:"btn btn-outline-success", type:"submit" %></li>
-        <% end %>
-      </ul>
-
-      <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Daddy features
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li class="nav-item"><a class="dropdown-item" href="#">Action</a></li>
-              <li class="nav-item"><a class="dropdown-item" href="#">Another action</a></li>
-              <li class="nav-item"><hr class="dropdown-divider"></li>
-              <li class="nav-item"><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
-    
-    </div>
-  </div>
-</nav>
--->
