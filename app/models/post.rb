@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   has_one_attached :file
 
   validates :title, presence: true
-  validates :file, blob: { content_type: ['image/jpg', 'image/jpeg', 'image/png'], message: 'Attached file must be an image', size_range: 0..3.megabytes }
+  validates :file, content_type: ['image/png', 'image/jpg', 'image/jpeg'], dimension: { width: { in: 100..5000 }, message: 'has width less than 100px or more than 5000' }, dimension: { height: { in: 100..5000 }, message: 'has height less than 100px or more than 5000' }
 
 
   scope :published, ->(value = "public", user){where("status=?", value)}
