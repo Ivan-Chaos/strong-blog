@@ -9,6 +9,8 @@ class CommentPolicy<ApplicationPolicy
 
     private 
     def author?
-        record.author_id==user.id
+        if user
+            record.author_id==user.id
+        end
     end
 end

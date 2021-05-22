@@ -2,6 +2,8 @@ class CommentsController < ApplicationController
     before_action :authenticate_user!, only: %i[new edit create update destroy]
   
     def create
+      authorize @comment
+      
       @post = Post.find(params[:post_id])
       @comment = @post.comments.create(comment_params)
       @comment.author=current_user

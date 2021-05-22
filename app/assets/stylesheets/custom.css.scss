@@ -4,7 +4,7 @@ $navbar-default-bg: black;
 @import '~mdb-ui-kit/css/mdb.min.css';
 
 body{
-    background-color: rgb(22, 22, 18) !important;
+    background-color: rgb(31, 36, 36) !important;
 }
 
 h1, h2, h4{
@@ -257,4 +257,31 @@ input:focus{
 
 #search{
     width: 500px;
+}
+
+.delete-button{
+    color: rgb(92, 92, 92) !important;
+    transition: all 1s ease;
+}
+
+.delete-button:hover{
+    color: rgb(170, 18, 18) !important;
+}
+
+.edit-button{
+    color: rgb(92, 92, 92) !important;
+    transition: all 1s ease;
+}
+
+.edit-button:hover{
+    color: rgb(0, 163, 101) !important;
+}
+
+.back-button{
+    color: rgb(92, 92, 92) !important;
+    transition: all 1s ease;
+}
+
+.back-button:hover{
+    color: rgb(144, 149, 73) !important;
 }
