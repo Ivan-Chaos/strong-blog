@@ -6,22 +6,31 @@
         <% end %>
 
         <div class="card-header post-title">
-            <%= link_to post.title, post_path(post) %>
+            <%= link_to post.title, post_path(post), class: "card-title" %>
         </div>
         <div class="card-body post-body">
             <blockquote class="blockquote mb-0">
             <%= truncate(post.body, length: 100) %>
             </blockquote>
         </div>
-        <div class="card-footer">
-            <% if policy(post).update? %>
-                <%= link_to "Edit", edit_post_path(post), class: "btn btn-primary" %>
-            <% end %>
-            <% if policy(post).destroy? %>    
-                <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete this article?"}, class: "btn btn-danger" %>
-            <% end %>
-
-            <p> Created by: <%= post.author.username %></p>
+        <div class="card-footer d-flex index-card">
+            <div class="mr-auto p-2">
+                <p> Created by <b><%= post.author.username %></b> <%= time_ago_in_words(post.created_at) %> ago</p>
+            </div>
+            <div class="p-2">
+                <%= link_to post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete this article?"} do %>
+                    <% if policy(post).destroy? %> 
+                        <h5><i class="fas fa-trash-alt delete-button"></i></h5>
+                    <% end %>
+                <% end %>
+            </div>
+            <div class="p-2">
+                <%= link_to edit_post_path(post) do%>
+                    <% if policy(post).update? %> 
+                    <h5><i class="far fa-edit edit-button"></i></h5>
+                    <% end %>
+                <% end %>
+            </div>
         </div>
     </div>
 <% end %>

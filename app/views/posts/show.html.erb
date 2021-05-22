@@ -35,7 +35,7 @@
   <% end %>
 
   <div class="card-header">
-    <p style="margin: 0px !important;"><i>Posted by <b><%= @post.author.username %></b> <%= time_ago_in_words(@post.created_at) %> ago</i></p>
+    <p style="margin: 0px !important;"><i>Posted by <b><%= @post.author.username %></b> <%= @post.created_at.strftime("on %d/%m/%Y at %I:%M%p") %></i></p>
   </div>
   
   <div class="card-body">

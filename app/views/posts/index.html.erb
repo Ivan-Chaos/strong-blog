@@ -1,12 +1,16 @@
-<h2 aligh="center">Our blog has <%= Post.public_count %> public posts</h2>
-<div align="center">
- <%= will_paginate @clients, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+
+<div class="d-flex justify-content-center">
+    <h2 aligh="center">Our blog has <%= Post.public_count %> public posts</h2>
+</div>
+
+<div class="d-flex justify-content-center">
+    <%= will_paginate @clients, class: "d-flex justify-content-center", renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 </div>
 
 <div class="card-columns all-posts">
     <%= render 'posts', posts: @posts %>
 </div>
 
-<div align="center">
+<div class="d-flex justify-content-center">
     <%= will_paginate @clients, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
-</div
+</div>
