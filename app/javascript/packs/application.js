@@ -11,6 +11,11 @@ import "channels"
 import 'bootstrap/dist/js/bootstrap'
 import "bootstrap/dist/css/bootstrap";
 
+import * as mdb from 'mdb-ui-kit'; // lib
+import { Input } from 'mdb-ui-kit'; // module
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+

@@ -1,6 +1,7 @@
 $navbar-default-bg: black;
 
 @import url('https://fonts.googleapis.com/css?family=Numans');
+@import '~mdb-ui-kit/css/mdb.min.css';
 
 body{
     background-color: rgb(22, 22, 18) !important;
@@ -8,6 +9,11 @@ body{
 
 h1, h2, h4{
     color: white !important;
+}
+
+#flash_notice{
+    background-color: blue !important;
+    color: white;
 }
 
 #logo {
@@ -247,4 +253,8 @@ input:focus{
 
 .links a{
     margin-left: 4px;
+}
+
+#search{
+    width: 500px;
 }
