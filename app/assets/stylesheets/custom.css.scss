@@ -3,6 +3,22 @@ $navbar-default-bg: black;
 @import url('https://fonts.googleapis.com/css?family=Numans');
 @import '~mdb-ui-kit/css/mdb.min.css';
 
+#image-container{
+    max-height: 40vh;
+    overflow: hidden;
+    transition: all 2s;
+}
+
+#photo{
+    width: 100%;
+    height: auto;
+}
+
+#opening{
+    align-self: center;
+}
+
+
 body{
     background-color: rgb(30, 36, 36) !important;
 }
@@ -169,7 +185,7 @@ label.status-select{
 }
 
 .post-body {
-    font-size: 18pt;
+    font-size: 20pt;
 }
 .post-meta-details {
  border-top: 1px solid #eaeaea;
@@ -317,4 +333,8 @@ input:focus{
 
 .card-title{
     color: rgb(11, 70, 60) !important;
+}
+
+.card-form{
+    margin-top: 2em;
 }

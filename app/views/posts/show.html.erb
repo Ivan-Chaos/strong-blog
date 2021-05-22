@@ -1,5 +1,6 @@
 
 
+
 <div class="card post-card" style="margin-top: 5%">
   <div class="card-header d-flex">
     <div class="mr-auto p-2">
@@ -31,11 +32,25 @@
   </div>
 
   <% if @post.file.attached? %>
-    <%= image_tag @post.file %>
+    <div id="image-container">
+      <%= image_tag @post.file, id: "photo" %>
+    </div>
   <% end %>
-
-  <div class="card-header">
-    <p style="margin: 0px !important;"><i>Posted by <b><%= @post.author.username %></b> <%= @post.created_at.strftime("on %d/%m/%Y at %I:%M%p") %></i></p>
+  
+  
+  
+  
+  
+  <div class="card-header d-flex" >
+    <div class="mr-auto p-2">
+      <p style="margin: 0px !important;"><i>Posted by <b><%= @post.author.username %></b> <%= @post.created_at.strftime("on %d/%m/%Y at %I:%M%p") %></i></p>
+    </div>
+    <div class="p-2" style="padding: 0px !important;">
+      <% if @post.file.attached? %>
+        <button class="btn btn-secondary" id="opening">Expand image <i class="fas fa-chevron-down"></i></button>
+        <%= javascript_pack_tag 'scripts'%>
+      <% end %>
+    </div>
   </div>
   
   <div class="card-body">

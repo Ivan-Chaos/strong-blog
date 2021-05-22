@@ -1,8 +1,8 @@
 <%= render 'shared/errors' %>
 
-<div class="card" style="background-color: rgba(0, 0, 0, 0);">
-  <div class="card-header gradientable d-flex justify-content-center">
-    <h1 style="color:black !important;">Create a new post</h1>
+<div class="card card-form" style="background-color: rgba(0, 0, 0, 0);">
+  <div class="card-header d-flex justify-content-center">
+    <h1>Create a new post</h1>
   </div>
   <div class="card-body new-post-card-body">
     <%= form_for(@post, :html => {class: "form-horizontal", role: "form"}) do |f| %>
@@ -28,9 +28,6 @@
       </div>
       <% end %>
 
-  </div>
-  <div class="card-footer new-post-card-body">
-    
   </div>
 </div>
 
