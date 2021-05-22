@@ -1,14 +1,14 @@
 <% if current_user %>
   <%= form_with model: [ @post, @post.comments.build ] do |form| %>
-    <div class="input-group">
+    <div class="input-group comment-section">
       <%= form.text_area :body, class: "form-control" %>
       <div class="input-group-append">
-        <%= form.button :submit do %>
+        <%= form.button :submit, class: "btn btn-secondary" do %>
           <i class="far fa-paper-plane"></i> Comment
         <% end %>
       </div>
     </div>
   <% end %>
 <% else %>
-  <p> you need to sign in in order to comment</p>
+  <p> You need to sign in in order to comment</p>
 <% end %>

@@ -81,7 +81,7 @@ label.status-select{
 }
 
 .new-post-card-body{
-    background-color: rgba(0, 0, 0, 0.692) !important;
+    background-color: rgba(44, 43, 43, 0.692) !important;
 }
 
 .new-post-card-body>* {
@@ -161,9 +161,7 @@ label.status-select{
 }
 
 .post-body {
- border-top: 1px solid #eaeaea;
- padding-top: 15px;
- padding-bottom: 15px;
+    font-size: 18pt;
 }
 .post-meta-details {
  border-top: 1px solid #eaeaea;
@@ -285,3 +283,28 @@ input:focus{
 .back-button:hover{
     color: rgb(144, 149, 73) !important;
 }
+
+.comment{
+    margin: 1em;
+    border-color: rgb(153, 153, 153) !important;
+}
+
+.comment>.card-header{
+    background-color: rgb(171, 189, 189) !important;
+}
+
+.comment-section{
+    margin: 1em;
+    width: auto !important;
+    
+}
+
+.post-card{
+    margin-bottom: min(6%);
+}
+
+#image-container{
+    max-height: 300px;
+    overflow: hidden;
+    transition: all 2s;
+  }
