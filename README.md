@@ -4,7 +4,7 @@
 
 * authentification(users have their own posts, so do comments) 2pts
 
-* authorization(admin feature included ) 4pts
+* authorization(admin feature included, email: admin@admin.com, password: 123456 ) 4pts
 
 * pagination 2pts
 
