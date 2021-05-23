@@ -32,17 +32,3 @@ function goBig(){
         extended=false;
     }
 }
-
-document.addEventListener('turbolinks:load', () => {
-    const pic=document.getElementById("photo");
-
-    window.addEventListener('load', (event) => {
-        console.log("chhecking for image size");
-        checkSize();
-    });
-    
-    const clickButton = document.getElementById("opening");
-    clickButton.addEventListener('click', (event) => {
-        goBig();
-    });
-});
